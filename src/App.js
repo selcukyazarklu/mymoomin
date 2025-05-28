@@ -75,12 +75,12 @@ function App() {
         const utteranceEn = new SpeechSynthesisUtterance(english);
         utteranceEn.lang = 'en-US';
         // You might want to find specific voices if default isn't good
-        //const voices = window.speechSynthesis.getVoices();
-        // utteranceEn.voice = voices.find(v => v.lang === 'en-US' && v.name.includes('Google')); // Example
+        const voices = window.speechSynthesis.getVoices();
+        utteranceEn.voice = voices.find(v => v.lang === 'en-US' && v.name.includes('Google')); // Example
         utterances.push(utteranceEn);
 
         const utteranceTr = new SpeechSynthesisUtterance(turkish);
-	//utteranceTr.voice = voices.find(v => v.lang === 'tr-TR');
+	utteranceTr.voice = voices.find(v => v.lang === 'tr-TR');
         utteranceTr.lang = 'tr-TR';
         
         utterances.push(utteranceTr);
