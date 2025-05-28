@@ -1,0 +1,12 @@
+a river|bir nehir
+a bird|bir kuş
+a flower|bir çiçek
+a valley|bir vadi
+a mouse|bir fare
+a rock|bir kaya
+the sky|gökyüzü
+a turtle|bir kaplumbağa
+a bush|bir çalı
+a star|bir yıldız
+a forest|bir orman
+a fox|bir tilki

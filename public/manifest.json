@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "imageSets":[
+    {"id":"moomin_1","imageFile": "moomin_1.png", "name":"1. Resim Doğa"}
+  ],
+  "short_name": "Vocabulary App ",
+  "name": "React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
