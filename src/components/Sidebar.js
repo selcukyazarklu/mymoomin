@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Sidebar = ({ isOpen, imageSets, selectedSetId, onSelectSet, onToggle }) => {
+// Accept className prop
+const Sidebar = ({ isOpen, imageSets, selectedSetId, onSelectSet, onToggle, className }) => {
   return (
     <>
-      <div className={`sidebar ${isOpen ? '' : 'closed'}`}>
+      {/* The className prop (e.g., 'open') is added here */}
+      <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${className || ''}`}>
         <h3>Image Sets</h3>
         <ul>
           {imageSets.map((set) => (
