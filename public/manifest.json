@@ -3,8 +3,8 @@
     {"id":"moomin_1","imageFile": "moomin_1.png", "name":"1. Resim Doğa"},
     {"id":"moomin_2","imageFile": "moomin_2.png", "name":"2. Meyveler"}
   ],
-  "short_name": "Vocabulary App ",
-  "name": "React App Sample",
+  "short_name": "Ege Sozluk ",
+  "name": "Egenin Kelimeleri",
   "icons": [
     {
       "src": "favicon.ico",
