@@ -1,32 +1,26 @@
-.App {
-
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 body {
   font-family: sans-serif;
   margin: 0;
   background-color: #f0f0f0;
   display: flex;
   min-height: 100vh;
+  overscroll-behavior: none; /* Prevents pull-to-refresh on mobile */
 }
+
 #root {
   display: flex;
   flex-grow: 1;
 }
 
-.app-container{
+.app-container {
   display: flex;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Important to contain fixed sidebar */
 }
 
-.sidebar{
+/* --- SIDEBAR --- */
+.sidebar {
   width: 250px;
   background-color: #333;
   color: white;
@@ -35,152 +29,177 @@ body {
   height: 100%;
   box-sizing: border-box;
   overflow-y: auto;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  z-index: 1000; /* Ensure it's above other content if it overlays */
 }
 
-.sidebar.closed{
+.sidebar.closed {
   transform: translateX(-100%);
-  width: 0;
-  padding-bottom: 10px;
+  /* On small screens, we might fully hide it or reduce width to 0 */
 }
 
-.sidebar h3{
+.sidebar h3 {
   margin-top: 0;
   border-bottom: 1px solid #555;
   padding-bottom: 10px;
 }
 
 .sidebar ul {
-  list-style-type:none;
+  list-style-type: none;
   padding: 0;
 }
 
-.sidebar li{
-  padding: 10px 0;
+.sidebar li {
+  padding: 10px 5px; /* Adjust padding slightly */
   cursor: pointer;
   border-bottom: 1px solid #444;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
-.sidebar li:hover{
+.sidebar li:hover {
   background-color: #555;
 }
 
-.sidebar li.actve{
+.sidebar li.active {
   background-color: #007bff;
   font-weight: bold;
 }
 
+/* --- MAIN CONTENT --- */
 .main-content {
   flex-grow: 1;
-  padding: 20px;
+  padding: 15px; /* Slightly reduced padding */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align content to top */
+  /* justify-content: flex-start; No, let image-display-container center */
+  align-items: center; /* Center the image container */
   overflow-y: auto;
   height: 100%;
   box-sizing: border-box;
+  position: relative; /* For potential overlays from sidebar */
+  transition: margin-left 0.3s ease-in-out; /* If sidebar pushes content */
 }
 
+/* --- CONTROLS (Toggle Button) --- */
 .controls {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: flex;
   width: 100%;
-  justify-content: flex-start; /* Align toggle button to the left */
+  max-width: 800px; /* Match image container max-width */
+  justify-content: flex-start;
 }
 
 .controls button {
-  padding: 8px 15px;
+  padding: 8px 12px;
   border: none;
   background-color: #007bff;
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 0.9em;
 }
 
 .controls button:hover {
   background-color: #0056b3;
 }
-/* Styles for ImageDisplay and OverlayGridCell */
+
+/* --- IMAGE DISPLAY --- */
 .image-display-container {
-  position: relative; /* For positioning the overlay grid */
+  position: relative; /* CRUCIAL: For positioning the absolute overlay grid */
   width: 100%;
-  max-width: 800px; /* Adjust as needed, or make it responsive */
-  margin: 0 auto; /* Center the image container */
-  background-color: #fff;
-  padding: 10px;
+  max-width: 700px; /* Adjust as needed for desktop */
+  margin: 0 auto; /* Center it horizontally */
+  background-color: #fff; /* Optional: if you want a bg behind the image */
+  padding: 5px; /* Minimal padding around the image if needed */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  display: flex; /* To help center image if it's smaller than container */
+
+  /* To help center image if it's smaller than container - flex not ideal if image is 100% width */
+  display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 200px; /* Ensure container has some height during loading */
 }
 
 .theme-image {
-  display: block;
+  display: block; /* Remove extra space below inline images */
   max-width: 100%;
-  max-height: calc(100vh - 120px); /* Example: viewport height minus controls/padding */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure image fits and maintains aspect ratio */
-  border-radius: 4px;
+  /* max-height should be controlled by the container or aspect ratio */
+  /* e.g., max-height: calc(100vh - 150px); to leave space for controls etc. */
+  height: auto;   /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure image fits and maintains aspect ratio within its box */
+  border-radius: 4px; /* If you want rounded corners on the image itself */
 }
 
 .overlay-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr); /* For a 3x4 grid */
-  gap: 1px; /* Tiny gap to visualize cells, adjust or remove if source image has borders */
-  /* border: 1px solid blue; */ /* For debugging */
+  /* Position, width, height, and display:grid are set via inline styles from JS */
+  /* gap: 1px; */ /* If your source image has internal borders you want to match, otherwise 0 */
+  /* border: 1px solid rgba(0, 255, 0, 0.5); /* For debugging overlay position */
 }
 
 .overlay-grid-cell {
   /* border: 1px dashed rgba(255, 0, 0, 0.3); /* For debugging cell boundaries */
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* Cells are transparent to show the image underneath */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
 }
 
 .overlay-grid-cell:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+  background-color: rgba(255, 255, 255, 0.15); /* Subtle highlight on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Medium screens (Tablets) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed; /* Take out of flow, allow overlay */
+    left: 0;
+    top: 0;
+    transform: translateX(-100%); /* Hidden by default */
+  }
+  .sidebar.open { /* New class to be added in App.js to open sidebar */
+    transform: translateX(0);
+  }
+  .sidebar.closed { /* Ensure it's fully hidden */
+    transform: translateX(-100%);
+  }
+
+  /* Main content does not need margin adjustment if sidebar overlays */
+  .main-content {
+     /* margin-left: 0; */ /* Reset if it was pushing content */
+  }
+
+  .image-display-container {
+    max-width: 95%; /* Allow more width */
+    padding: 3px;
+  }
+
+  .controls button {
+    font-size: 0.85em;
+    padding: 6px 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Small screens (Phones) */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .controls {
+    margin-bottom: 10px;
+  }
+  .image-display-container {
+    max-width: 100%; /* Full width */
+    border-radius: 4px; /* Reduce radius */
+    box-shadow: none; /* Optional: remove shadow on small screens */
+    padding: 0; /* No padding if image is edge-to-edge */
+    min-height: 150px;
+  }
+  .theme-image {
+     border-radius: 0; /* No radius if container has no padding */
   }
 }
