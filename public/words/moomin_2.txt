@@ -5,7 +5,7 @@ a strawberry|bir çilek
 grapes|üzüm
 a pear|bir armut
 cherry|kiraz
-a lemonle|bir limon
+a lemon|bir limon
 a plum|bir erik
 a blueberry|bir yabanmersini
 a raspberry|bir ahududu
