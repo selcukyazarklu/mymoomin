@@ -162,7 +162,7 @@ function App() {
       <main className="main-content">
         <div className="controls">
           <button onClick={toggleSidebar} style={{ marginRight: 'auto' }}>
-            {isSidebarOpen ? 'Menüyü Aç' : 'Menüyü Kapat'}
+            {isSidebarOpen ? 'Menüyü Kapat' : 'Menüyü Aç'}
           </button>
         </div>
         
