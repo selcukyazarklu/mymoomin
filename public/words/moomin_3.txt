@@ -1,0 +1,12 @@
+A Car|bir araba
+A Bus|bir otobüs
+A Truck|bir kamyon
+A bicycle|bir bisiklet
+A boat|bir tekne
+An airplane|bir uçak
+A train|bir tren
+A helicopter|bir helikopter
+A motorcycle|bir motorsiklet
+A scooter|bir skuter
+A van|bir minibüs
+A tractor|bir traktör
