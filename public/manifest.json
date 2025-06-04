@@ -1,7 +1,8 @@
 {
   "imageSets":[
     {"id":"moomin_1","imageFile": "moomin_1.png", "name":"1. Resim Doğa"},
-    {"id":"moomin_2","imageFile": "moomin_2.png", "name":"2. Meyveler"}
+    {"id":"moomin_2","imageFile": "moomin_2.png", "name":"2. Meyveler"},
+    {"id":"moomin_3","imageFile": "moomin_3.png", "name":"3. Araçlar"}
   ],
   "short_name": "Ege Sozluk ",
   "name": "Egenin Kelimeleri",
