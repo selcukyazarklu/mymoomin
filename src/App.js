@@ -93,6 +93,8 @@ function App() {
         const utteranceEn = new SpeechSynthesisUtterance(english);
         utteranceEn.lang = 'en-US';
         utterances.push(utteranceEn);
+        utteranceEn.rate = 0.8;
+        utteranceEn.pitch = 1;
 
         const utteranceTr = new SpeechSynthesisUtterance(turkish);
         utteranceTr.lang = 'tr-TR';
