@@ -1,0 +1,12 @@
+Red|Kırmızı
+Blue|Mavi
+Yellow|Sarı
+Green|Yeşil
+Orange|Turuncu
+Purple|Mor
+Pink|Pempe
+Brown|Kahverengi
+Black|Black
+White|Beyaz
+Gray|Gri
+Cyan|Cam Göbeği
