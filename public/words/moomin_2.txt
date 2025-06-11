@@ -1,12 +1,12 @@
-an apple|bir elma
-a banana|bir muz
-an orange|bir portakal
-a strawberry|bir çilek
+apple|elma
+banana|muz
+orange|portakal
+strawberry|çilek
 grapes|üzüm
-a pear|bir armut
+ear|armut
 cherry|kiraz
-a lemon|bir limon
-a plum|bir erik
-a blueberry|bir yabanmersini
-a raspberry|bir ahududu
-a watermelon|bir karpuz
+lemon|limon
+plum|erik
+blueberry|yabanmersini
+raspberry|ahududu
+watermelon|karpuz
