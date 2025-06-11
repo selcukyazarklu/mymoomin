@@ -21,7 +21,7 @@ const ImageDisplay = ({ words, imageSet, onCellClick }) => {
 
       setImageRenderedRect({
         top: imgRect.top - containerRect.top, // Position relative to the container
-        left: imgRect.left - containerRect.left, // Position relative to the container
+        left: (imgRect.left - containerRect.left) + 5 , // Position relative to the container
         width: imgRect.width,
         height: imgRect.height,
       });
