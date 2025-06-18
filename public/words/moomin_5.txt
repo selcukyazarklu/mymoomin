@@ -1,0 +1,12 @@
+Doctor|Doktor
+Teacher|Öğretmen
+Farmer|Çiftçi
+Firefighter|İtfaiyeci
+Cook|Aşçı
+Artist|Ressam
+Builder|İçsi
+Police|Polis
+Baker|Fırıncı
+Musician|Müzisyen
+Gardener|Bahçıvan
+Astronaut|Astronot
