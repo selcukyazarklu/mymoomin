@@ -4,7 +4,8 @@
     {"id":"moomin_2","imageFile": "moomin_2.png", "name":"2. Meyveler"},
     {"id":"moomin_3","imageFile": "moomin_3.png", "name":"3. Araçlar"},
     {"id":"moomin_4","imageFile": "moomin_4.png", "name":"4. Renkler"},
-    {"id":"moomin_5","imageFile": "moomin_5.png", "name":"4. Meslekler"}
+    {"id":"moomin_5","imageFile": "moomin_5.png", "name":"5. Meslekler"},
+    {"id":"moomin_6","imageFile": "moomin_6.png", "name":"6. Organlar"}
   ],
   "short_name": "Ege Sozluk ",
   "name": "Egenin Kelimeleri",
