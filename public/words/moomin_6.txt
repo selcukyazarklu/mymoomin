@@ -1,0 +1,12 @@
+Head|Baş
+Eye|Göz
+Nose|Burun
+Ear|Kulak
+Mouth|Ağız
+Arm|Kol
+Hand|El
+Tummy|Göbek
+Leg|Bacak
+Hair|Saç
+Finger|Parmak
+Foot|Ayak
