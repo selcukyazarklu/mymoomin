@@ -1,0 +1,12 @@
+Hello|Merhaba
+Good morning|Günaydın 
+Good afternoon|İyi Öğlenler
+Good evening|İyi Akşamlar
+Good night|İyi Geceler
+Goodbye|Hoşçakal
+How are you?|Nasılsın
+Please|Lütfen
+Thank you|Teşekkürler
+Sorry|Özür Dilerim
+Excuse me|Affedersin
+Have a nice day!|İyi Günler
