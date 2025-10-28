@@ -6,7 +6,7 @@ Orange|Turuncu
 Purple|Mor
 Pink|Pempe
 Brown|Kahverengi
-Black|Black
+Black|Siyah
 White|Beyaz
 Gray|Gri
 Cyan|Cam Göbeği
